@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>各國旅遊聲量變化</title>
+    <link rel="icon" href="https://i.ibb.co/LYB0ZF5/world.png">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 100px;
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+
+    li {
+        float: right;
+    }
+
+    li a {
+        display: block;
+        color: white;
+        text-align: middle;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    p {
+        padding: 20px;
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+
+    li a:hover:not(.active) {
+        background-color: #B8B8DC;
+    }
+
+    footer.banner {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: #333;
+        color: white;
+        text-align: center;
+        font-size: 10px;
+        padding: 8px;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 100vh;
+
+    }
+
+    .box {
+        width: 30%;
+        text-align: center;
+        border: 1px solid #ccc;
+        padding: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        height: 85%;
+        background-color: #lightblue;
+    }
+
+    .box img {
+        width: 90%;
+        cursor: pointer;
+    }
+
+    .hidden {
+        display: none;
+    }
+    </style>
+    <script>
+    function handleClick(boxId) {
+        var img = document.getElementById('img-' + boxId);
+        var text = document.getElementById('text-' + boxId);
+        img.classList.add('hidden');
+        text.classList.remove('hidden');
+    }
+    </script>
+</head>
+
+<body>
+    <ul>
+        <li><a class="active">研究介紹</a></li>
+        <li><a href="file:///C:/Users/04071/Downloads/%E7%88%AC%E8%9F%B2/%E5%9C%96.html">相關性</a></li>
+        <li><a href="file:///C:/Users/04071/Downloads/%E7%88%AC%E8%9F%B2/%E6%B8%AC%E8%A9%A6.html#map">各國數據</a></li>
+    </ul>
+    <div>
+        <h3>點擊圖片以查看詳細研究介紹</h3>
+    </div>
+    <div class="container">
+        <div class="box">
+            <h2>研究目的</h2>
+            <img id="img-1" src="https://i.ibb.co/1Tk8Q4Q/pexels-geojango-maps-50965933-7662165.jpg" alt="Placeholder Image" onclick="handleClick('1')">
+            <p id="text-1" class="hidden" style="margin: 8px;">我們想透過網頁爬蟲技術，了解近十年來台灣民眾對不同國家旅遊的討論聲量有什麼樣的趨勢。我們選擇亞洲近十年來造訪量最高的十個國家（地區），接著將討論聲量與內政部移民署「歷年中華民國國民出國人次按目的地統計」的資料做比較，了解討論聲量及實際情況是否具有相關性，並推測背後的原因為何。本研究參考劉謙嬑(2020)在運用社群媒體探討國人赴日本旅遊之網路聲量變化一文中的研究方法，透過網路爬蟲程式擷取PTT旅遊版2014年至2023年間所有的文章與回覆，並設定臺灣前十喜歡旅遊的旅遊國家為關鍵字，重複出現的國家只會計算一次並且會呈上該篇文章回覆的次數，得出單一國家單一年度的討論度。</p>
+        </div>
+        <div class="box">
+            <h2>呈現方式</h2>
+            <img id="img-2" src="https://i.ibb.co/0qffD45/pexels-n-voitkevich-7235894.jpg" alt="Placeholder Image" onclick="handleClick('2')">
+            <p id="text-2" class="hidden" style="margin: 8px;">1.2013~2023年各國討論聲量走勢圖2.討論聲量與實際出國人次的皮爾森積差相關分析</p>
+        </div>
+        <div class="box">
+            <h2>研究結果</h2>
+            <img id="img-3" src="https://i.ibb.co/zXPdVY4/pexels-n-voitkevich-7235893.jpg" alt="Placeholder Image" onclick="handleClick('3')">
+            <p id="text-3" class="hidden" style="margin: 8px;">1.討論聲量可能受疫情或政治因素影響。 2.討論度與實際出國人次呈正相關，但旅遊之外的出國目的會減低相關性，如香港與中國大陸商務客的比例較高。</p>
+        </div>
+    </div>
+    <footer class="banner">Copyright © 2024 地理114張弘逸 地理115莊沛珣.</footer>
+</body>
+
+</html>
